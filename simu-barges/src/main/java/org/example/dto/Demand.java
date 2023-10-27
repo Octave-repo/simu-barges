@@ -1,13 +1,24 @@
 package org.example.dto;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.sql.Timestamp;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class Demand {
     private String origin;
     private String destination;
-    private Timestamp startDate;
-    private Timestamp endDate;
+    private int startDate;
+    private int endDate;
     private int quantity;
+    @JsonIgnore
+    private String id;
+    @JsonIgnore
+    private static final AtomicInteger atom = new AtomicInteger();
+
+    public Demand() {
+        this.id = "\033[4m" + "demand-" + atom.getAndIncrement() + "\033[0m";
+    }
 
     @Override
     public String toString() {
@@ -31,19 +42,19 @@ public class Demand {
         this.destination = destination;
     }
 
-    public Timestamp getStartDate() {
+    public int getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Timestamp startDate) {
+    public void setStartDate(int startDate) {
         this.startDate = startDate;
     }
 
-    public Timestamp getEndDate() {
+    public int getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(int endDate) {
         this.endDate = endDate;
     }
 
@@ -53,5 +64,9 @@ public class Demand {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public String getId() {
+        return id;
     }
 }

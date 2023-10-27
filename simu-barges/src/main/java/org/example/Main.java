@@ -1,15 +1,12 @@
 package org.example;
 
-import org.example.dto.DemandList;
+import org.example.manager.SimulationManager;
+
 
 public class Main {
-    //Teste la création / le format d'une demande
-    public static void testerCreationDemandes(){
-        DemandList list = DemandList.createDemandsFromFile("src/main/resources/demands.json");
-        System.out.println(list.toString());
-    }
     public static void main(String[] args) {
-        testerCreationDemandes();
-
+        //Crée et lance la simulation
+        SimulationManager simu = new SimulationManager(Paths.DEMANDS.value, Paths.ITINERARY.value);
+        simu.run(false);
     }
 }

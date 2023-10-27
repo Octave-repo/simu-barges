@@ -30,4 +30,8 @@ public class DemandList {
                 "list=" + list +
                 '}';
     }
+
+    public List<Demand> getList() {
+        return list;
+    }
 }

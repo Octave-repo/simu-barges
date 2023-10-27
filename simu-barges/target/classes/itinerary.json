@@ -1,0 +1,36 @@
+[
+  [
+    {
+      "depart": "A",
+      "arrive": "B",
+      "duree": 3
+    },
+    {
+      "depart": "B",
+      "arrive": "C",
+      "duree": 3
+    },
+    {
+      "depart": "C",
+      "arrive": "A",
+      "duree": 12
+    }
+  ],
+  [
+    {
+      "depart": "A",
+      "arrive": "C",
+      "duree": 4
+    },
+    {
+      "depart": "B",
+      "arrive": "A",
+      "duree": 3
+    },
+    {
+      "depart": "C",
+      "arrive": "B",
+      "duree": 3
+    }
+  ]
+]
